@@ -1,37 +1,30 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Navigation from './components/Navigation.vue'
+import { ref, onMounted } from "vue";
+import Navigation from "./components/Navigation.vue";
 
-const isDarkMode = ref(false)
+const isDarkMode = ref(localStorage.getItem("darkMode") === "true");
 
 const toggleDarkMode = () => {
-  isDarkMode.value = !isDarkMode.value
-}
+  isDarkMode.value = !isDarkMode.value;
+  localStorage.setItem("darkMode", isDarkMode.value);
+  document.documentElement.classList.toggle("dark", isDarkMode.value);
+};
+
+onMounted(() => {
+  document.documentElement.classList.toggle("dark", isDarkMode.value);
+});
 </script>
 
 <template>
   <div :class="{ 'dark': isDarkMode }" class="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
     <div class="flex flex-col min-h-screen">
       <header class="relative z-10">
-        <div class="bg-gray-100 dark:bg-gray-800 py-2 px-4">
-          <div class="container mx-auto flex justify-end">
-            <button
-              @click="toggleDarkMode"
-              class="p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white"
-            >
-              {{ isDarkMode ? '🌞' : '🌙' }}
-            </button>
-          </div>
-        </div>
-        <Navigation />
+        <Navigation :isDarkMode="isDarkMode" @toggleDarkMode="toggleDarkMode" />
       </header>
 
       <main class="flex-grow container mx-auto px-4 py-8">
         <router-view v-slot="{ Component }">
-          <transition
-            name="page"
-            mode="out-in"
-          >
+          <transition name="page" mode="out-in">
             <component :is="Component" />
           </transition>
         </router-view>
@@ -57,5 +50,8 @@ const toggleDarkMode = () => {
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
+}
+.dark {
+  background-color: #1a202c !important; /* Pastikan warna gelap diterapkan */
 }
 </style>

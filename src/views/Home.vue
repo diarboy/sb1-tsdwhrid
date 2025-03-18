@@ -193,7 +193,7 @@ onMounted(() => {
       </section>
 
       <!-- CTA Section -->
-      <section class="py-20 bg-blue-500 dark:bg-blue-600">
+      <section class="py-20 bg-blue-500 dark:bg-gray-800 rounded-xl">
         <div class="container mx-auto px-4 text-center">
           <h2 class="text-4xl font-bold text-white mb-8">Ready to Start Your Project?</h2>
           <p class="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
