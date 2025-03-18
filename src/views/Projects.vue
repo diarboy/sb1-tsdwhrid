@@ -13,7 +13,7 @@ const projects = ref([
   {
     title: 'E-commerce Platform',
     description: 'A full-featured online shopping platform built with Vue.js and Node.js',
-    image: 'https://via.placeholder.com/400x300',
+    image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e',
     tags: ['Vue.js', 'Node.js', 'MongoDB'],
     link: '#',
     stats: {
@@ -25,7 +25,7 @@ const projects = ref([
   {
     title: 'Task Management App',
     description: 'A collaborative task management solution for remote teams',
-    image: 'https://via.placeholder.com/400x300',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab',
     tags: ['React', 'Firebase', 'Material-UI'],
     link: '#',
     stats: {
@@ -37,7 +37,7 @@ const projects = ref([
   {
     title: 'Social Media Dashboard',
     description: 'Analytics dashboard for social media management',
-    image: 'https://via.placeholder.com/400x300',
+    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab',
     tags: ['Vue.js', 'D3.js', 'TypeScript'],
     link: '#',
     stats: {
@@ -49,7 +49,7 @@ const projects = ref([
   {
     title: 'Fitness Tracking App',
     description: 'Mobile-first application for tracking workouts and nutrition',
-    image: 'https://via.placeholder.com/400x300',
+    image: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa',
     tags: ['React Native', 'Redux', 'Node.js'],
     link: '#',
     stats: {
